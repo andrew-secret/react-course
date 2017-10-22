@@ -8,11 +8,29 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Welcome to React with redux</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="TodoApp">
+          <form>
+            <input type="text" />
+          </form>
+          <div className="TodoList">
+            <ul>
+              <li>
+                <input type="checkbox" />
+                  Create static UI
+              </li>
+              <li>
+                <input type="checkbox" />
+                  Create initial state
+              </li>
+              <li>
+                <input type="checkbox" />
+                  Use state to render UI
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     );
   }
