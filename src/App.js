@@ -13,7 +13,9 @@ class App extends Component {
           <h1 className="App-title">Welcome to React with redux</h1>
         </header>
         <div className="TodoApp">
-          <TodoForm />
+          <TodoForm 
+            changeCurrent={this.props.changeCurrent}
+            currentTodo={this.props.currentTodo}/>
           <TodoList todos={this.props.todos}/>
         </div>
       </div>
