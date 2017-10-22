@@ -5,7 +5,17 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import store from './store';
 
-const state = store.getState();
+const todoChangeHandler = (val) => store.dispatch({type: 'CURRENT_UPDATE', payload: val});
 
-ReactDOM.render(<App {...state}/>, document.getElementById('root'));
+const render = () => {
+    const state = store.getState();
+    ReactDOM.render(<App todos={state.todos} 
+        changeCurrent={todoChangeHandler}
+        currentTodo={state.currentTodo}/>, 
+        document.getElementById('root'));
+}
+render();
+
+store.subscribe(render);
+
 registerServiceWorker();
